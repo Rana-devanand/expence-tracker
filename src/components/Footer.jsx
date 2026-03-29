@@ -1,48 +1,82 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Twitter, Linkedin, Github, Mail, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" style={{ borderTop: '1px solid var(--border)', background: 'var(--bg-secondary)', paddingTop: '64px' }}>
       <div className="container">
-        <div className="footer-top">
+        <div className="footer-top" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '48px', marginBottom: '64px' }}>
           <div className="footer-brand">
-            <h2>Money Flow</h2>
-            <p>Smarter financial management with AI insights. Track, understand, and grow your wealth.</p>
+            <div className="nav-brand" style={{ marginBottom: '20px' }}>
+              <div className="logo-box">M</div>
+              <span style={{ fontSize: '1.4rem' }}>Money Flow</span>
+            </div>
+            <p style={{ fontSize: '0.85rem', color: 'var(--text-dim)', lineHeight: '1.7', marginBottom: '24px' }}>
+              Your intelligent companion for seamless expense tracking. Mastering your money flow, one insight at a time.
+            </p>
+            <div className="social-links" style={{ display: 'flex', gap: '16px' }}>
+              <a href="#" className="icon-btn" style={{ borderRadius: '10px' }}><Twitter size={14} /></a>
+              <a href="#" className="icon-btn" style={{ borderRadius: '10px' }}><Linkedin size={14} /></a>
+              <a href="#" className="icon-btn" style={{ borderRadius: '10px' }}><Github size={14} /></a>
+            </div>
           </div>
           
           <div className="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><Link to="/">Dashboard</Link></li>
-              <li><Link to="/banks">Bank Accounts</Link></li>
-              <li><Link to="/insights">AI Insights</Link></li>
+            <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '24px' }}>Product</h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <li><Link to="/" style={{ fontSize: '0.85rem', color: 'var(--text-dim)', textDecoration: 'none' }}>Dashboard</Link></li>
+              <li><Link to="/banks" style={{ fontSize: '0.85rem', color: 'var(--text-dim)', textDecoration: 'none' }}>Connected Banks</Link></li>
+              <li><Link to="/insights" style={{ fontSize: '0.85rem', color: 'var(--text-dim)', textDecoration: 'none' }}>AI Analytics</Link></li>
+              <li><Link to="/" style={{ fontSize: '0.85rem', color: 'var(--text-dim)', textDecoration: 'none' }}>Pricing</Link></li>
             </ul>
           </div>
           
           <div className="footer-links">
-            <h3>Support</h3>
-            <ul>
-              <li><Link to="/">Help Center</Link></li>
-              <li><Link to="/">Contact Support</Link></li>
+            <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '24px' }}>Company</h3>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <li><Link to="/" style={{ fontSize: '0.85rem', color: 'var(--text-dim)', textDecoration: 'none' }}>About Us</Link></li>
+              <li><Link to="/" style={{ fontSize: '0.85rem', color: 'var(--text-dim)', textDecoration: 'none' }}>Careers</Link></li>
+              <li><Link to="/privacy" style={{ fontSize: '0.85rem', color: 'var(--text-dim)', textDecoration: 'none' }}>Privacy Policy</Link></li>
+              <li><Link to="/terms" style={{ fontSize: '0.85rem', color: 'var(--text-dim)', textDecoration: 'none' }}>Terms of Service</Link></li>
             </ul>
           </div>
-          
-          <div className="footer-links">
-            <h3>Legal</h3>
-            <ul>
-              <li><Link to="/privacy">Privacy Policy</Link></li>
-              <li><Link to="/terms">Terms of Service</Link></li>
-              <li><Link to="/privacy">Cookie Policy</Link></li>
-            </ul>
+
+          <div className="footer-newsletter">
+            <h3 style={{ fontSize: '1rem', fontWeight: '700', marginBottom: '24px' }}>Stay in the loop</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)', marginBottom: '16px' }}>Subscribe to get AI tips on saving and financial health.</p>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              <input 
+                type="email" 
+                placeholder="Email address" 
+                style={{ 
+                  background: 'var(--bg-dark)', 
+                  border: '1px solid var(--border)', 
+                  padding: '10px 16px', 
+                  borderRadius: '10px',
+                  color: '#fff',
+                  fontSize: '0.85rem',
+                  width: '100%'
+                }} 
+              />
+              <button className="btn-primary" style={{ padding: '10px', borderRadius: '10px' }}>
+                <ArrowRight size={18} />
+              </button>
+            </div>
           </div>
         </div>
         
-        <div className="footer-bottom">
-          <p className="footer-bottom-text">© 2026 Money Flow. Built for financial freedom.</p>
-          <div className="social-links">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <div className="footer-bottom" style={{ borderTop: '1px solid var(--border)', paddingTop: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-dim)' }}>
+            © {new Date().getFullYear()} Money Flow Inc. All rights reserved.
+          </p>
+          <div style={{ display: 'flex', gap: '24px' }}>
+             <a href="#" style={{ fontSize: '0.8rem', color: 'var(--text-dim)', textDecoration: 'none' }}>Support</a>
+             <a href="#" style={{ fontSize: '0.8rem', color: 'var(--text-dim)', textDecoration: 'none' }}>System Status</a>
+             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--primary)', fontSize: '0.8rem', fontWeight: 'bold' }}>
+               <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: 'currentColor' }}></div>
+               Active
+             </div>
           </div>
         </div>
       </div>
