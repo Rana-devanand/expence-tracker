@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Twitter, Linkedin, Github, Mail, ArrowRight } from 'lucide-react';
+// import { Twitter, Linkedin, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -16,9 +16,9 @@ const Footer = () => {
               Your intelligent companion for seamless expense tracking. Mastering your money flow, one insight at a time.
             </p>
             <div className="social-links" style={{ display: 'flex', gap: '16px' }}>
-              <a href="#" className="icon-btn" style={{ borderRadius: '10px' }}><Twitter size={14} /></a>
+              {/* <a href="#" className="icon-btn" style={{ borderRadius: '10px' }}><Twitter size={14} /></a>
               <a href="#" className="icon-btn" style={{ borderRadius: '10px' }}><Linkedin size={14} /></a>
-              <a href="#" className="icon-btn" style={{ borderRadius: '10px' }}><Github size={14} /></a>
+              <a href="#" className="icon-btn" style={{ borderRadius: '10px' }}><Github size={14} /></a> */}
             </div>
           </div>
           
@@ -60,7 +60,8 @@ const Footer = () => {
                 }} 
               />
               <button className="btn-primary" style={{ padding: '10px', borderRadius: '10px' }}>
-                <ArrowRight size={18} />
+                Submit
+                {/* <ArrowRight size={18} /> */}
               </button>
             </div>
           </div>
